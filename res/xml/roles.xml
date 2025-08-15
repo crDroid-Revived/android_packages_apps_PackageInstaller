@@ -426,12 +426,16 @@
 
     <role
         name="android.app.role.SYSTEM_GALLERY"
+        behavior="SystemGalleryRoleBehavior"
         defaultHolders="config_systemGallery"
         exclusive="true"
         fallBackToDefaultHolder="true"
         systemOnly="true"
         visible="false">
         <permissions>
+            <!-- The photo/video permissions and ACCESS_MEDIA_LOCATION are granted by the
+                 SystemGalleryRoleBehavior, to override the user choice (as the write_media app ops
+                 override the user's choice anyway). -->
             <permission-set name="storage" />
             <permission name="android.permission.ACCESS_MEDIA_LOCATION" />
         </permissions>
